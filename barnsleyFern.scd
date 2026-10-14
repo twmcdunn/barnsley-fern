@@ -11,7 +11,6 @@ s.waitForBoot({
 	fork{
 		d = ();
 		d.requiredSounds = ["Piano_Samples"];
-		"dependencies/sample-install.scd".loadRelative;
 
 		d.onComplete = {
 			fork {
@@ -500,8 +499,9 @@ s.waitForBoot({
 					}
 				}.play(SystemClock);
 				~randPent.stop;
-			}
-		}
+			};
+		};
+		"dependencies/sample-install.scd".loadRelative;
 	}
 });
 )

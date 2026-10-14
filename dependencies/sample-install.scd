@@ -70,6 +70,9 @@ if(File.exists(targetDir), {
 
 	if(allExist, {
 		"All required sounds already installed. Exiting.".postln;
+		if(d[\onComplete].notNil, {
+			d[\onComplete].value;
+		});
 		nil; // Exit script
 	}, {
 		"Missing folders: %".format(missingFolders).postln;
